@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int reverseBits(int n) {
+        int result = 0;
+        
+        for(int i = 0; i < 32; i++) {
+            result = result * 2;      // shift left
+            result = result + (n % 2); // add last bit
+            n = n / 2;               // remove last bit
+        }
+        
+        return result;
+    }
+};
